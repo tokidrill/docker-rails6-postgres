@@ -1,7 +1,13 @@
 # docker-rails6-postgres
 
 ## How to buildup environment
-### rails new
+### Clone This Repository
+
+```
+$ git clone https://github.com/tokidrill/docker-rails6-postgres.git
+```
+
+### Run rails new
 Create Rails project with PostgreSQL.
 
 ```
@@ -14,10 +20,11 @@ $ docker-compose run web rails new . --force --no-deps --databse=postgres --skip
 $ docker-compose build --no-cache
 ```
 
-### Modify your database configulation and create database.
+### Modify your database configulation and create database
 
 Modify ```database.yml``` .
 
+config/database.yml
 ```config/database.yml
 
 default: &default
@@ -49,14 +56,15 @@ production:
 Then, run migrate for initialize.
 
 ```
-$docker-compose run web rake db:create
+$ docker-compose run web rake db:create
 ```
 
 ## Up Docker container
 
 ```
-$docker-compose up -d
+$ docker-compose up -d
 ```
 
 ## Yay! You're on Rails !!
 Access http://localhost:3000 .
+Congratulations !! Now, you're on Rails !!
