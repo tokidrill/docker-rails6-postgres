@@ -24,7 +24,7 @@ Create Rails project with PostgreSQL.
 #### run rails new
 
 ```
-$ docker-compose run --rm web rails new . --force --no-deps --databse=postgres --skip-test --webpacker
+$ docker-compose run --rm web rails new . --force --no-deps --database=postgresql --skip-test --webpacker
 ```
 
 #### alias
