@@ -21,7 +21,7 @@ build:
 
 # Copy postgres connection settings
 copy-config:
-	@$(RUN_WEB) cp -b $(DATABASE_YAML_COPY_FROM) $(DATABASE_YAML_COPY_TO) | true
+	@$(RUN_WEB) cp -b $(DATABASE_YAML_COPY_FROM) $(DATABASE_YAML_COPY_TO)
 
 # Create a database
 db-create:
