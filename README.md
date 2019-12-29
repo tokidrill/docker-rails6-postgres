@@ -1,28 +1,53 @@
 # docker-rails6-postgres
 
+## Run the following command
+
+```bash
+$ make all
+```
+
+That's all.  
+
+
 ## How to buildup environment
+
 ### Clone This Repository
 
-```
+```bash
 $ git clone https://github.com/tokidrill/docker-rails6-postgres.git
 ```
 
 ### Run rails new
+
 Create Rails project with PostgreSQL.
 
+#### run rails new
+
 ```
-$ docker-compose run web rails new . --force --no-deps --databse=postgres --skip-test --webpacker
+$ docker-compose run --rm web rails new . --force --no-deps --database=postgresql --skip-test --webpacker
+```
+
+#### alias
+
+```bash
+$ make new
 ```
 
 ### Build Docker image
 
-```
+```bash
 $ docker-compose build --no-cache
+```
+
+#### alias
+
+```bash
+$ make build
 ```
 
 ### Modify your database configulation and create database
 
-Modify ```database.yml``` .
+#### Modify ```database.yml``` .
 
 config/database.yml
 ```config/database.yml
@@ -53,18 +78,34 @@ production:
 
 ```
 
-Then, run migrate for initialize.
+#### Or execute the command
 
+```bash
+make copy-config
 ```
+
+#### Then, run migrate for initialize.
+
+```bash
 $ docker-compose run web rake db:create
 ```
 
 ## Up Docker container
 
-```
+```bash
 $ docker-compose up -d
 ```
 
+#### alias
+
+```bash
+$ make up
+```
+
 ## Yay! You're on Rails !!
-Access http://localhost:3000 .
-Congratulations !! Now, you're on Rails !!
+Access http://localhost:3000 .  
+Congratulations !! Now, you're on Rails !!  
+
+#### Other commands
+
+[See Makefile](./Makefile)
